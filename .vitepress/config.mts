@@ -1,5 +1,4 @@
 import { defineConfigWithTheme ,DefaultTheme } from 'vitepress'
-import { VitePressStylesPlugin } from './theme/style/loadStyles'
 
 // https://vitepress.dev/reference/site-config
 export interface ThemeConfig extends DefaultTheme.Config {
@@ -30,7 +29,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   vite: {
     optimizeDeps: {
       include: ['@vueuse/core']
-    },
-    plugins: [VitePressStylesPlugin()]
+    }
   }
 })
