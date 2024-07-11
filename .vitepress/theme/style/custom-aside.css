@@ -1,15 +1,15 @@
-.VPNav {
-  .VPNavBar{
-    .wrapper {
-      .container{
-        width: 65%;
-      }
-    }
-  }
-}
-
 @media (min-width: 960px) {
   header.VPNav {
     position: absolute !important;
+  }
+
+  .VPNav {
+    .VPNavBar{
+      .wrapper {
+        .container{
+          width: 65%;
+        }
+      }
+    }
   }
 }
