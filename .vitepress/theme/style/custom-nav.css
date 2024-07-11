@@ -2,7 +2,9 @@
   header.VPNav {
     position: absolute !important;
   }
+}
 
+@media (min-width: 1280px) {
   .VPNav {
     .VPNavBar{
       .wrapper {
@@ -12,4 +14,9 @@
       }
     }
   }
+}
+
+.VPNavBar > .divider,
+.VPNavBar .divider-line {
+  background-color: transparent !important;
 }

@@ -1,3 +1,3 @@
-<template>
+<template class="">
   examples
 </template>

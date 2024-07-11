@@ -2,7 +2,7 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
-import './index.css'
+import './style/index.css'
 import MyLayout from './Layout.vue'
 import home from './page/home.vue'
 import examples from './page/examples.vue'

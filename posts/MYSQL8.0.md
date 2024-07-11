@@ -1,7 +1,7 @@
 ---
 outline: deep
-title: Centos7 Yum安装MYSQL8.0添加远程权限
-date: 2024-02-21 10:20:00
+title: Centos7 Yum MYSQL8.0添加远程权限
+date: 2024-02-21
 ---
 
 ### 1、创建新用户 
@@ -28,4 +28,4 @@ ALTER USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
 flush privileges;
 ```
 
-### 注：**<font color=red>mysql8版本执行 grant all privileges on *.*  to  'root'@'%'  identified by 'root'  with grant option;  会报语法错误  ERROR 1064 (42000)</font>**
+### 注：**<p color=red>mysql8版本执行 grant all privileges on *.*  to  'root'@'%'  identified by 'root'  with grant option;  会报语法错误  ERROR 1064 (42000)</p>**

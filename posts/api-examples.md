@@ -2,9 +2,6 @@
 outline: deep
 title: API Examples
 date: 2021-01-11
-author: Evan You
-gravatar: eca93da2c67aadafe35d477aa8f454b8
-twitter: '@youyuxi'
 ---
 
 # Runtime API Examples
