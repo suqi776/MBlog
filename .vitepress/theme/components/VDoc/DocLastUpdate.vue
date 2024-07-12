@@ -1,12 +1,10 @@
 <template>
   <div >
-    <VPDocFooterLastUpdated style="display: none;" class="doc-footer-last-update"/>
     <span class="time">本文最后更新时间：{{ formattedDate }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
-import VPDocFooterLastUpdated from 'vitepress/dist/client/theme-default/components/VPDocFooterLastUpdated.vue'
 import { useData } from 'vitepress'
 import { onMounted, ref } from 'vue'
 
