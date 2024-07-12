@@ -3,6 +3,9 @@ outline: deep
 title: Centos7 Yum安装MYSQL8.0详细安装步骤
 date: 2024-02-22
 ---
+
+[[toc]]
+
 Centos7 Yum安装MYSQL8.0详细安装步骤
 
 ### 0、更换yum源

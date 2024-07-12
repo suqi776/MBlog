@@ -3,6 +3,8 @@ title: Vitepress for Tailwind CSS
 date: 2024-07-11
 ---
 
+[[toc]]
+
 # Vitepress for Tailwind CSS
 
 ## 简介

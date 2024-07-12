@@ -1,5 +1,8 @@
 @import './custom-listcard.css';
 @import './custom-nav.css';
+@import './custom-table-contents.css';
+@import './custom-doc.css';
+@import './custom-all.css';
 
 @tailwind base;
 @tailwind components;

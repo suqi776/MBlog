@@ -1,0 +1,62 @@
+.table-of-contents {
+  position: fixed;
+  top: 90px;
+  bottom: 0;
+  font-size: .8em;
+  left: 40px;
+  z-index: 200;
+  overflow: hidden;
+  display: none;
+  width: 100px;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .table-of-contents {
+    width:200px;
+    display: flex;
+  }
+}
+
+@media (min-width: 1280px) {
+  .table-of-contents {
+    width:300px;
+  }
+}
+
+nav.table-of-contents::before {
+  content: "目录";
+  font-size: 1.2rem;
+  display: block;
+  color: rgba(125, 125, 125, .5);
+  font-weight: 800;
+}
+
+nav.table-of-contents > ul {
+  display: none;
+}
+
+nav.table-of-contents:hover::before {
+  color: var(--vp-c-text-1);
+}
+
+nav.table-of-contents:hover > ul{
+  display: block;
+}
+
+nav.table-of-contents a {
+  color: rgba(125, 125, 125, .5);
+  text-decoration: underline;
+  text-decoration-color: rgba(125, 125, 125, .5);
+}
+
+nav.table-of-contents li {
+  list-style-type: none;
+}
+
+nav.table-of-contents a:hover {
+  color: rgba(125, 125, 125, 1) !important;
+  text-decoration-color: rgba(125, 125, 125, 1);
+}
+

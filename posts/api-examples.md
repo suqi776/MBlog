@@ -4,6 +4,8 @@ title: API Examples
 date: 2021-01-11
 ---
 
+[[toc]]
+
 # Runtime API Examples
 
 This page demonstrates usage of some of the runtime APIs provided by VitePress.

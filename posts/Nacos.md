@@ -4,7 +4,9 @@ title: 实现服务注册与发现(Nacos)
 date: 2024-02-20
 ---
 
-#### 1、开发环境
+[[toc]]
+
+## 1、开发环境
 <table>
     <tr>
         <th>Nacos</th>
@@ -32,9 +34,9 @@ date: 2024-02-20
     </tr>
 </table>
 
-#### 2、准备工作
-##### 2.1、 下载Nacos (https://github.com/alibaba/nacos/releases)
-##### 2.2、 启动Nacos
+## 2、准备工作
+### 2.1、 下载Nacos (https://github.com/alibaba/nacos/releases)
+### 2.2、 启动Nacos
 
 Linux/Unix/Mac
 
@@ -54,8 +56,8 @@ startup.cmd -m standalone
 
 ![nacosStast.png](https://s2.loli.net/2024/02/21/uk4B2oP5CXpvwyY.png)
 
-#### 3、工程创建
-##### 3.1、使用maven创建父工程(删除src文件) pom.xml文件如下
+## 3、工程创建
+### 3.1、使用maven创建父工程(删除src文件) pom.xml文件如下
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -140,8 +142,8 @@ startup.cmd -m standalone
 </project>
 ```
 
-##### 3.2、创建spring-provider与spring-consumer子工程
-###### 3.2.0、spring-provider -> pom.xml
+### 3.2、创建spring-provider与spring-consumer子工程
+#### 3.2.0、spring-provider -> pom.xml
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -229,14 +231,14 @@ startup.cmd -m standalone
 </project>
 
 ```
-###### 3.2.1、在spring-provider工程中添加bootstrap.properties文件
+#### 3.2.1、在spring-provider工程中添加bootstrap.properties文件
 ``` properties
 server.port=8070
 spring.application.name=service-provider
 spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
 
 ```
-###### 3.2.2、修改启动器以提供服务注册功能
+#### 3.2.2、修改启动器以提供服务注册功能
 ``` java
 package com.su.springprovider;
 
@@ -269,7 +271,7 @@ public class SpringProviderApplication {
 }
 
 ```
-###### 3.2.3、spring-consumer -> pom.xml
+#### 3.2.3、spring-consumer -> pom.xml
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -336,14 +338,14 @@ public class SpringProviderApplication {
 </project>
 
 ```
-###### 3.2.4、 在spring-consumer的application.properties添加
+#### 3.2.4、 在spring-consumer的application.properties添加
 ``` properties
 spring.application.name=service-consumer
 server.port=18082
 spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
 ```
 
-###### 3.2.5、新建EchoService
+#### 3.2.5、新建EchoService
 ``` java
 package com.su.springconsumer;
 
@@ -358,7 +360,7 @@ public interface EchoService {
     String echo(@PathVariable(name = "str") String str);
 }
 ```
-###### 3.2.6、新建TestController
+#### 3.2.6、新建TestController
 ``` java
 package com.su.springconsumer;
 
@@ -392,7 +394,7 @@ public class TestController {
 
 }
 ```
-###### 3.2.7、修改启动器
+#### 3.2.7、修改启动器
 ``` java
 package com.su.springconsumer;
 
@@ -421,15 +423,15 @@ public class SpringConsumerApplication {
 
 }
 ```
-###### 3.2.8 启动spring-provider与spring-consumer
+#### 3.2.8 启动spring-provider与spring-consumer
 
-##### 4、测试
-###### 4.1、服务列表
+## 4、测试
+#### 4.1、服务列表
 在浏览器打开(http://127.0.0.1:8848/nacos)可以看见
 ![nacosHome.png](https://s2.loli.net/2024/02/21/UxcZRltFzoAQb6Y.png)
 在左侧导航栏中打开服务管理/服务列表可以看见我们的两个服务
 ![nacosCloud.png](https://s2.loli.net/2024/02/21/R6f5hsq3u9yEMiz.png)
-###### 4.2、测试服务
+#### 4.2、测试服务
 浏览器打开
 ```
 http://127.0.0.1:18082/echo-rest/rest-rest

@@ -4,6 +4,8 @@ title: Iconify for Tailwind CSS
 date: 2024-07-11
 ---
 
+[[toc]]
+
 # Iconify for Tailwind CSS
 
 ## 简介
@@ -20,15 +22,22 @@ Iconify 是一套面向开发人员和设计人员的工具，旨在以一致的
 :::
 
 ::: tip 在vitepress中使用
-[点我跳转：Vitepress for Tailwind CSS](./vitepress-for-tailwind-css.md)
+[点我跳转：Vitepress for Tailwind CSS](./vitepress-for-tailwind-css)
 :::
 
 ## 安装
 运行以下命令以将图标添加到项目：
-```
+::: code-group
+``` pnpm
 pnpm i -D @iconify/tailwind
 ```
-
+``` npm
+npm i -D @iconify/tailwind
+```
+``` yarn
+yarn add -D @iconify/tailwind
+```
+:::
 ## addIconSelectors 插件
 ::: details 配置tailwind.config.js
 ``` js

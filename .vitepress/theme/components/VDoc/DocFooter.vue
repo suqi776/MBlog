@@ -3,13 +3,10 @@
     <div class="link">
       <div v-if="prevPost">
         <a :href="prevPost.url">> {{ prevPost.title }}</a>
-        <p>{{ date.string }}</p>
       </div>
       <div v-if="nextPost">
         <a :href="nextPost.url">> {{ nextPost.title }}</a>
-        <p>{{ date.string }}</p>
       </div>
-      <span class="icon-[carbon--accept-action-usage]" style="width: 1.2rem; height: 1.2rem; color: white;"></span>
     </div>
   </footer>
 </template>
@@ -22,10 +19,9 @@ import { data as posts } from '../../utils/posts.data'
 const route = useRoute()
 
 function findCurrentIndex() {
-  return posts.findIndex((p) => p.url === route.path)
+  return posts.findIndex((p) => p.url.replace(/.html/g, '') === route.path)
 }
 
-const date = computed(() => posts[findCurrentIndex()]?.date)
 const nextPost = computed(() => posts[findCurrentIndex() - 1])
 const prevPost = computed(() => posts[findCurrentIndex() + 1])
 </script>
