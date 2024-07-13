@@ -1,29 +1,30 @@
-import { defineConfigWithTheme ,DefaultTheme } from 'vitepress'
+import type { DefaultTheme } from 'vitepress'
+import { defineConfigWithTheme } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export interface ThemeConfig extends DefaultTheme.Config {
-  docCount?: number,
+  docCount?: number
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
-  title: "My Blog",
+  title: 'My Blog',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' }
+      { text: 'Home', link: '/' },
     ],
 
     // 分页
     docCount: 5,
 
     // 尾部
-    footer: { 
-      message: 'Released under the MIT License.', 
-      copyright: 'Copyright © 2019-2024present Su-77', 
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2019-2024present Su-77',
     },
 
     // 目录侧边栏
-    aside:false
+    aside: false,
   },
   // ...
   markdown: {
@@ -31,11 +32,11 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
   vite: {
     optimizeDeps: {
-      include: ['@vueuse/core']
-    }
+      include: ['@vueuse/core'],
+    },
   },
   // vercel 移除 .html
-  cleanUrls:true,
-  // 显示最后更新时间 
-  lastUpdated: true
+  cleanUrls: true,
+  // 显示最后更新时间
+  lastUpdated: true,
 })

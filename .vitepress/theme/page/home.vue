@@ -1,13 +1,9 @@
-<template>
-  <ListPosts/>
-</template>
-
-
-
 <script lang="ts" setup>
 import ListPosts from '../components/ListPosts.vue'
 </script>
 
-<style scoped>
+<template>
+  <ListPosts />
+</template>
 
-</style>
+<style scoped></style>

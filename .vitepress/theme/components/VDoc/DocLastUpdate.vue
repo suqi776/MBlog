@@ -1,9 +1,3 @@
-<template>
-  <div >
-    <span class="time">本文最后更新时间：{{ formattedDate }}</span>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import { onMounted, ref } from 'vue'
@@ -12,7 +6,7 @@ const { page } = useData()
 const formattedDate = ref('')
 
 onMounted(() => {
-  const timestamp = page.value.lastUpdated;
+  const timestamp = page.value.lastUpdated
   if (timestamp) {
     const date = new Date(timestamp)
     const year = date.getFullYear()
@@ -22,6 +16,12 @@ onMounted(() => {
   }
 })
 </script>
+
+<template>
+  <div>
+    <span class="time">本文最后更新时间：{{ formattedDate }}</span>
+  </div>
+</template>
 
 <style scoped>
 .time {

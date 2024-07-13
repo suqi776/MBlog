@@ -21,10 +21,10 @@ export default createContentLoader('posts/*.md', {
         title: frontmatter.title,
         url,
         excerpt,
-        date: formatDate(frontmatter.date)
+        date: formatDate(frontmatter.date),
       }))
       .sort((a, b) => b.date.time - a.date.time)
-  }
+  },
 })
 
 function formatDate(raw: string): Post['date'] {
@@ -35,7 +35,7 @@ function formatDate(raw: string): Post['date'] {
     string: date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
-    })
+      day: 'numeric',
+    }),
   }
 }

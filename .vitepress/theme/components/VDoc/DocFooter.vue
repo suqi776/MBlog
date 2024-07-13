@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vitepress'
+import { data as posts } from '../../utils/posts.data'
+
+const route = useRoute()
+
+function findCurrentIndex() {
+  return posts.findIndex(p => p.url.replace(/.html/g, '') === route.path)
+}
+
+const nextPost = computed(() => posts[findCurrentIndex() - 1])
+const prevPost = computed(() => posts[findCurrentIndex() + 1])
+</script>
+
 <template>
   <footer>
     <div class="link">
@@ -10,21 +25,6 @@
     </div>
   </footer>
 </template>
-
-<script setup lang="ts">
-import { computed } from 'vue'
-import { useRoute } from 'vitepress'
-import { data as posts } from '../../utils/posts.data'
-
-const route = useRoute()
-
-function findCurrentIndex() {
-  return posts.findIndex((p) => p.url.replace(/.html/g, '') === route.path)
-}
-
-const nextPost = computed(() => posts[findCurrentIndex() - 1])
-const prevPost = computed(() => posts[findCurrentIndex() + 1])
-</script>
 
 <style scoped>
 .link a:hover {
