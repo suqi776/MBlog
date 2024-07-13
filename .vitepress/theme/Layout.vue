@@ -3,6 +3,7 @@ import DefaultTheme from 'vitepress/theme'
 import ArtPlum from './components/ArtPlum.vue'
 import DocFooter from './components/VDoc/DocFooter.vue'
 import DocLastUpdate from './components/VDoc/DocLastUpdate.vue'
+import BackToTop from './components/VDoc/BackToTop.vue'
 
 const { Layout } = DefaultTheme
 </script>
@@ -10,6 +11,7 @@ const { Layout } = DefaultTheme
 <template>
   <div class="home">
     <ArtPlum />
+    <BackToTop />
     <Layout class="home-container">
       <template #doc-before>
         <DocLastUpdate />
