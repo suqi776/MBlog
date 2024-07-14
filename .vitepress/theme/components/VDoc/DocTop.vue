@@ -19,6 +19,9 @@ onMounted(() => {
 
 <template>
   <div>
+    <h1 class="title">
+      {{ page.title }}
+    </h1>
     <span class="time">本文最后更新时间：{{ formattedDate }}</span>
   </div>
 </template>
@@ -31,5 +34,21 @@ onMounted(() => {
 
 .time:hover {
   color: rgba(125, 125, 125, .6);
+}
+
+.title {
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .title {
+      letter-spacing: -0.02em;
+      line-height: 40px;
+      font-size: 2.27rem;
+      font-weight: 800;
+  }
 }
 </style>

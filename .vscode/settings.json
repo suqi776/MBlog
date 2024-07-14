@@ -44,5 +44,13 @@
     "scss",
     "pcss",
     "postcss"
-  ]
+  ],
+
+  // tailwindcss
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
 }

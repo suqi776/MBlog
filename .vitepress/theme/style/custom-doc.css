@@ -2,3 +2,8 @@
 .last-updated {
   display: none;
 }
+
+/** DELECE a h2 */
+.vp-doc h2{
+  margin-top: 0 !important;
+}

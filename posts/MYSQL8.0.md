@@ -6,7 +6,7 @@ date: 2024-02-21
 
 [[toc]]
 
-### 1、创建新用户 
+### 1、创建新用户
 ```
 create user 'admin'@'%' identified by 'password';
 ```
