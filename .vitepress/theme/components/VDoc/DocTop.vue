@@ -1,11 +1,24 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
-import { onMounted, ref } from 'vue'
+import { useData, useRoute } from 'vitepress'
+import { onMounted, ref, watch } from 'vue'
+import Shields from './Shields.vue'
 
-const { page } = useData()
+const { page, frontmatter } = useData()
+const route = useRoute()
 const formattedDate = ref('')
+const category = ref([])
+
+watch(route, () => {
+  getCategory()
+  getFormattedDate()
+})
 
 onMounted(() => {
+  getCategory()
+  getFormattedDate()
+})
+
+function getFormattedDate() {
   const timestamp = page.value.lastUpdated
   if (timestamp) {
     const date = new Date(timestamp)
@@ -14,7 +27,11 @@ onMounted(() => {
     const day = date.getDate().toString().padStart(2, '0')
     formattedDate.value = `${year}-${month}-${day}`
   }
-})
+}
+
+function getCategory() {
+  category.value = frontmatter.value.category
+}
 </script>
 
 <template>
@@ -23,6 +40,7 @@ onMounted(() => {
       {{ page.title }}
     </h1>
     <span class="time">本文最后更新时间：{{ formattedDate }}</span>
+    <Shields :category="category" />
   </div>
 </template>
 
