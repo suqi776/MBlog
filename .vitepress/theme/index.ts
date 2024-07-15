@@ -10,9 +10,9 @@ import examples from './page/examples.vue'
 export default {
   extends: DefaultTheme,
   Layout: MyLayout,
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app }) {
     // ...
     app.component('index', home)
     app.component('examples', examples)
-  }
+  },
 } satisfies Theme

@@ -1,35 +1,7 @@
-<template>
-  <ul class="home-list">
-    <li v-for="{ title, url, date, excerpt } of currentPosts">
-      <div class="linkcard">
-        <a :href="url">
-          <p class="description">
-            {{ title }}
-            <br>
-            <span>{{ date.string }}</span>
-          </p>
-          <div class="logo">
-              <img alt="Logo" width="70px" height="70px" src="https://vitepress.yiov.top/logo.png" />
-          </div>
-        </a>
-      </div>
-    </li>
-  </ul>
-
-  <div class="home-wrapper">
-    <div :class="['home-item', { disabled: currentPage === 1 }]" @click="prevPage()">Prev</div>
-    <div v-for="page in totalPages" :key="page" :class="['home-item', { active: currentPage === page }]" @click="goToPage(page)">
-      {{ page }}
-    </div>
-    <div :class="['home-item', { disabled: currentPage === totalPages }]" @click="nextPage()">Next</div>
-  </div>
-</template>
-
-
 <script lang="ts" setup>
-import { computed, ref } from 'vue';
-import { data as posts } from '../utils/posts.data'
+import { computed, ref } from 'vue'
 import { useData } from 'vitepress'
+import { data as posts } from '../utils/posts.data'
 
 const { theme } = useData()
 const docCount: number = theme.value.docCount || 5
@@ -55,11 +27,40 @@ function prevPage() {
 
 function goToPage(page: number) {
   currentPage.value = page
-  console.log(currentPage.value)
 }
-
 </script>
- 
+
+<template>
+  <ul class="home-list">
+    <li v-for="{ title, url, date } of currentPosts" :key="url">
+      <div class="linkcard">
+        <a :href="url">
+          <p class="description">
+            {{ title }}
+            <br>
+            <span>{{ date.string }}</span>
+          </p>
+          <div class="logo">
+            <img alt="Logo" width="70px" height="70px" src="https://vitepress.yiov.top/logo.png">
+          </div>
+        </a>
+      </div>
+    </li>
+  </ul>
+
+  <div class="home-wrapper">
+    <div class="home-item" :class="[{ disabled: currentPage === 1 }]" @click="prevPage()">
+      Prev
+    </div>
+    <div v-for="page in totalPages" :key="page" class="home-item" :class="[{ active: currentPage === page }]" @click="goToPage(page)">
+      {{ page }}
+    </div>
+    <div class="home-item" :class="[{ disabled: currentPage === totalPages }]" @click="nextPage()">
+      Next
+    </div>
+  </div>
+</template>
+
 <style scoped>
 .home-list{
   padding-top: 10%;

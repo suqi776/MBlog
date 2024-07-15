@@ -7,11 +7,11 @@ export default {
       content: [
         './.vitepress/theme/**/*.vue',
         './posts/**/*.md',
-        './posts/*.md'
+        './posts/*.md',
       ],
       plugins: [
-        addIconSelectors(['mdi', 'mdi-light', 'carbon', 'simple-icons', 'logos'])
-      ]
+        addIconSelectors(['mdi', 'mdi-light', 'carbon', 'simple-icons', 'logos']),
+      ],
     }),
-  ]
+  ],
 }

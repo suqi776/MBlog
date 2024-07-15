@@ -2,13 +2,12 @@
 outline: deep
 title: Iconify for Tailwind CSS
 date: 2024-07-11
+category:
+  - Iconify
+  - Tailwind CSS
 ---
 
 [[toc]]
-
-# Iconify for Tailwind CSS
-
-## 简介
 
 Iconify 是一套面向开发人员和设计人员的工具，旨在以一致的方式轻松使用不同的图标集。<br/>
 优点：

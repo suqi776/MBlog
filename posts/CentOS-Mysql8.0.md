@@ -6,8 +6,6 @@ date: 2024-02-22
 
 [[toc]]
 
-Centos7 Yum安装MYSQL8.0详细安装步骤
-
 ### 0、更换yum源
 
 ### 1、打开 mirrors.aliyun.com，选择centos的系统，点击帮助
@@ -40,7 +38,7 @@ yum -y remove mysql-libs.x86_64
 ```
 ### 8、安装wget命令
 ```
-yum install wget -y 
+yum install wget -y
 ```
 ### 9、给CentOS添加rpm源，并且选择较新的源
 ```
