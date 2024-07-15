@@ -7,3 +7,11 @@
 .vp-doc h2{
   margin-top: 0 !important;
 }
+
+.vp-doc {
+  padding-top: 10px;
+}
+
+.VPLocalNav{
+  display: none;
+}

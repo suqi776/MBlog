@@ -38,6 +38,13 @@ yarn add -D @iconify/tailwind
 ```
 :::
 ## addIconSelectors 插件
+与 [addDynamicIconSelectors](./useIconify#adddynamiciconselectors-插件) 区别
+  - 更紧凑的CSS，重用通用代码
+  - 更简洁的图标名称
+
+缺点
+  - 需要引入
+
 ::: details 配置tailwind.config.js
 ``` js
 /** 引入addIconSelectors */
@@ -63,9 +70,9 @@ export default {
 ```
 :::
 
-使用addIconSelectors 插件时，还需要将图标集安装为开发依赖项。您可以安装完整的软件包 @iconify/json 或图标集的软件包，要使用 @iconify-json/{prefix}。
+使用addIconSelectors 插件时，还需要将图标集安装为开发依赖项。您可以安装完整的软件包 `@iconify/json` 或图标集的软件包，要使用 `@iconify-json/{prefix}`。
 
-::: details 如果要使用`mdi-light--home`，请安装 @iconify-json/mdi-light 包。
+::: details 如果要使用`mdi-light--home`，请安装 `@iconify-json/mdi-light` 包。
 ```
 pnpm i -D @iconify-json/mdi-light
 ```
@@ -106,3 +113,40 @@ pnpm i -D @iconify-json/mdi-light
 <span class="iconify-color logos--vitejs"></span>
 <span class="iconify-color logos--typescript-icon-round"></span>
 <span class="iconify simple-icons--vuedotjs"></span>
+
+## addDynamicIconSelectors 插件
+与 [addIconSelectors](./useIconify#addiconselectors-插件) 区别
+  - 无需配置插件
+  - 每个图标一个类名
+
+缺点
+  - 类名奇奇怪怪
+::: details 配置tailwind.config.js
+``` js
+/** 引入addDynamicIconSelectors */
+import { addDynamicIconSelectors } from '@iconify/tailwind' // [!code ++]
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/*.html'],
+  plugins: [
+    // Iconify plugin
+    addDynamicIconSelectors(), // [!code ++]
+  ],
+}
+```
+:::
+
+### 使用方法
+类名的语法是这样的：`[str]icon-[{prefix}--{name}]`，其中`{prefix}`是图标集前缀，`{name}`是图标名称。<br/>
+
+例子：
+``` html
+<span class="icon-[ph--alarm-duotone]"></span>
+<span class="icon-[fluent-emoji-flat--alarm-clock]"></span>
+<span class="icon-[carbon--edit-off]"></span>
+```
+
+<span class="icon-[ph--alarm-duotone]"></span>
+<span class="icon-[fluent-emoji-flat--alarm-clock]"></span>
+<span class="icon-[carbon--edit-off]"></span>

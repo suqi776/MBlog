@@ -6,6 +6,7 @@ import './style/index.css'
 import MyLayout from './Layout.vue'
 import home from './page/home.vue'
 import examples from './page/examples.vue'
+import category from './page/category.vue'
 
 export default {
   extends: DefaultTheme,
@@ -14,5 +15,6 @@ export default {
     // ...
     app.component('index', home)
     app.component('examples', examples)
+    app.component('category', category)
   },
 } satisfies Theme

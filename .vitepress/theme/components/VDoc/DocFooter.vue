@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vitepress'
 import { data as posts } from '../../utils/posts.data'
@@ -11,6 +11,10 @@ function findCurrentIndex() {
 
 const nextPost = computed(() => posts[findCurrentIndex() - 1])
 const prevPost = computed(() => posts[findCurrentIndex() + 1])
+
+function goBack() {
+  window.history.back()
+}
 </script>
 
 <template>
@@ -21,6 +25,9 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
       </div>
       <div v-if="nextPost">
         <a :href="nextPost.url">> {{ nextPost.title }}</a>
+      </div>
+      <div>
+        <a class="cursor-pointer" @click="goBack">> cd..</a>
       </div>
     </div>
   </footer>

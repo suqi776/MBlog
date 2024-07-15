@@ -11,7 +11,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
+      { text: '分类', link: '/category' },
     ],
 
     // 分页
@@ -20,7 +20,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     // 尾部
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-2024present Su-77',
+      copyright: 'Copyright © 2019-present Su-77',
     },
 
     // 目录侧边栏

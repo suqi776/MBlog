@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { useData, useRoute } from 'vitepress'
 import { onMounted, ref, watch } from 'vue'
 import Shields from './Shields.vue'
@@ -63,10 +63,10 @@ function getCategory() {
 
 @media (min-width: 768px) {
   .title {
-      letter-spacing: -0.02em;
-      line-height: 40px;
-      font-size: 2.27rem;
-      font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 40px;
+    font-size: 2.27rem;
+    font-weight: 800;
   }
 }
 </style>

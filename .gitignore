@@ -1,4 +1,3 @@
 node_modules
 dist
 .vitepress/cache
-tailwind.config.js
