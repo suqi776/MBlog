@@ -26,7 +26,7 @@
 }
 
 nav.table-of-contents::before {
-  content: "目录";
+  content: "☰";
   font-size: 1.2rem;
   display: block;
   color: rgba(125, 125, 125, .5);
