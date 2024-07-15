@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang='ts'>
 import { computed } from 'vue'
 import { useRoute } from 'vitepress'
 import { data as posts } from '../../utils/posts.data'

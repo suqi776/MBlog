@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang='ts'>
 import { useData, useRoute } from 'vitepress'
 import { onMounted, ref, watch } from 'vue'
 import Shields from './Shields.vue'
