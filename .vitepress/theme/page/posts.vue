@@ -9,7 +9,7 @@ const currentPosts = computed(() => {
 </script>
 
 <template>
-  <CarkPosts :current-posts="currentPosts" class="cark-posts" />
+  <CarkPosts :current-posts="currentPosts" class="cark-posts" :count="10" />
 </template>
 
 <style scoped>

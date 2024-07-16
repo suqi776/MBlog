@@ -11,7 +11,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '分类', link: '/category' },
+      { text: '归档', link: '/pages/posts' },
+      { text: '分类', link: '/pages/category' },
     ],
 
     // 分页

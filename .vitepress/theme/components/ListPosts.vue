@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { useData } from 'vitepress'
 import { data as posts } from '../utils/posts.data'
+import LimitPages from './VDoc/LimitPages.vue'
 
 const { theme } = useData()
 const docCount: number = theme.value.docCount || 5
@@ -12,18 +13,6 @@ const currentPosts = computed(() => {
   const end = start + docCount
   return posts.slice(start, end)
 })
-
-function nextPage() {
-  if (currentPage.value < totalPages.value) {
-    currentPage.value++
-  }
-}
-
-function prevPage() {
-  if (currentPage.value > 1) {
-    currentPage.value--
-  }
-}
 
 function goToPage(page: number) {
   currentPage.value = page
@@ -48,17 +37,7 @@ function goToPage(page: number) {
     </li>
   </ul>
 
-  <div class="home-wrapper">
-    <div class="home-item" :class="[{ disabled: currentPage === 1 }]" @click="prevPage()">
-      Prev
-    </div>
-    <div v-for="page in totalPages" :key="page" class="home-item" :class="[{ active: currentPage === page }]" @click="goToPage(page)">
-      {{ page }}
-    </div>
-    <div class="home-item" :class="[{ disabled: currentPage === totalPages }]" @click="nextPage()">
-      Next
-    </div>
-  </div>
+  <LimitPages :total-pages="totalPages" :current-page="currentPage" @update-page="goToPage" />
 </template>
 
 <style scoped>
@@ -67,30 +46,5 @@ function goToPage(page: number) {
   width: 60%;
   margin: 0 auto;
   background-color: transparent;
-}
-.home-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-.home-item {
-  vertical-align: middle;
-  margin: 4px 4px 10px;
-  padding: 4px 8px;
-  font-weight: bolder;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 2px;
-  line-height: 13px;
-  font-size: 13px;
-  box-shadow: 0 1px 8px 0 rgba(108, 108, 108, 0.5);
-  transition: all 0.5s;
-}
-.home-item.disabled {
-  cursor: not-allowed;
-}
-.home-item.active {
-  background-color: #007bff;
-  color: white;
 }
 </style>

@@ -27,13 +27,13 @@ Iconify 是一套面向开发人员和设计人员的工具，旨在以一致的
 ## 安装
 运行以下命令以将图标添加到项目：
 ::: code-group
-``` pnpm
+``` bash [pnpm]
 pnpm i -D @iconify/tailwind
 ```
-``` npm
+``` bash [npm]
 npm i -D @iconify/tailwind
 ```
-``` yarn
+``` bash [yarn]
 yarn add -D @iconify/tailwind
 ```
 :::
