@@ -39,7 +39,7 @@ function handleItemClick(c: any) {
 
 @media (min-width: 768px) {
   .category {
-    width: 60%;
+    width: 55%;
   }
 }
 </style>
