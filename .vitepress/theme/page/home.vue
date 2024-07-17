@@ -20,7 +20,6 @@ const currentPosts = computed(() => {
 .home {
   width: 90%;
   margin: 0 auto;
-  /* margin: 100vh auto 0 auto; */
   background-color: transparent;
 }
 

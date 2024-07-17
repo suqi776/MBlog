@@ -64,11 +64,19 @@ function goToPage(page: number) {
 </template>
 
 <style scoped>
-.cark:hover {
-  /* box-shadow: 7px 7px 0px 0px rgb(113 113 122 / 0.5); */
-  box-shadow: 0px 0px 20px 0px rgb(113 113 122 / 0.5);
-  transition: all 0.3s ease;
+.cark {
+  box-shadow: 7px 7px 0px 0px rgb(113 113 122 / 0.5);
   cursor: pointer;
-  transform: translateY(3px);
+}
+
+@media (min-width: 768px) {
+  .cark {
+    box-shadow: none;
+  }
+
+  .cark:hover {
+    box-shadow: 0px 0px 20px 0px rgb(113 113 122 / 0.5);
+    transition: all 0.3s ease;
+  }
 }
 </style>
