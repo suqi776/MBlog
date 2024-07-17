@@ -5,11 +5,10 @@ export default {
   content: [
     './.vitepress/theme/**/*.vue',
     './posts/**/*.md',
-    './posts/*.md'
+    './posts/*.md',
   ],
   theme: {
     extend: {},
   },
   plugins: [addIconSelectors(['mdi', 'mdi-light', 'carbon', 'simple-icons', 'logos'])],
 }
-

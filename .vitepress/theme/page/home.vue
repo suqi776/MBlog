@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import CarkPosts from '../components/CarkPosts.vue'
+import CarkList from '../components/CarkList.vue'
 import { data as posts } from '../utils/posts.data'
 
 const currentPosts = computed(() => {
@@ -9,18 +9,18 @@ const currentPosts = computed(() => {
 </script>
 
 <template>
-  <CarkPosts :current-posts="currentPosts" class="cark-posts" />
+  <CarkList class="cark-posts" :data-list="currentPosts" />
 </template>
 
 <style scoped>
 .cark-posts {
   width: 90%;
-  padding-top: 2%;
   margin: 0 auto;
+  /* margin: 100vh auto 0 auto; */
   background-color: transparent;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .cark-posts {
     width: 55%;
   }

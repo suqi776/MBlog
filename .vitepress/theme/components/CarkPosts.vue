@@ -39,7 +39,7 @@ function goToPage(page: number) {
       <li v-for="{ title, url, date } of filteredPosts" :key="url" class="p-2 my-2 border-solid">
         <div>
           <a :href="url" class="w-full h-full flex flex-col">
-            <span class="inline-block w-full h-full text-ellipsis whitespace-nowrap overflow-hidden">{{ title }}</span>
+            <span class="inline-block w-full h-full truncate">{{ title }}</span>
             <span class="date">- {{ date.string }}</span>
           </a>
         </div>
@@ -60,10 +60,8 @@ li {
 
 li:hover {
   border-color: rgba(125, 125, 125);
-  box-shadow: 0 1px 6px 0 rgba(127,127,127, .6);
   box-sizing: border-box;
   color: var(--text-1-color);
-
 }
 
 .date {
