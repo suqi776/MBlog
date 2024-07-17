@@ -45,7 +45,7 @@ function goToPage(page: number) {
         <Cark class="p-10">
           <template #default>
             <a :href="item.url" class="flex flex-col justify-center w-full">
-              <h2 class="text-lg font-bold">
+              <h2 class="text-lg font-bold truncate w-full">
                 {{ item.title }}
               </h2>
               <span class="inline-block truncate w-full leading-none my-3">
