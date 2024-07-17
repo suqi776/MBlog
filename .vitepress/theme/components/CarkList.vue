@@ -36,15 +36,15 @@ function goToPage(page: number) {
 
 <template>
   <div>
-    <ul class="w-full h-full flex flex-col">
+    <ul class="w-full">
       <li
         v-for="(item, index) in filteredPosts"
         :key="index"
-        class="h-44 mt-4 cursor-pointer"
+        class="h-44 cursor-pointer mb-5"
       >
-        <Cark class="p-10">
+        <Cark class="cark p-10 hover:bg-zinc-500/10">
           <template #default>
-            <a :href="item.url" class="flex flex-col justify-center w-full">
+            <a :href="item.url" class="flex flex-col w-full">
               <h2 class="text-lg font-bold truncate w-full">
                 {{ item.title }}
               </h2>
@@ -64,5 +64,11 @@ function goToPage(page: number) {
 </template>
 
 <style scoped>
-
+.cark:hover {
+  /* box-shadow: 7px 7px 0px 0px rgb(113 113 122 / 0.5); */
+  box-shadow: 0px 0px 20px 0px rgb(113 113 122 / 0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transform: translateY(3px);
+}
 </style>
