@@ -8,6 +8,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "busuanzi.pure.js": "^1.0.3",
     "typescript": "^5.5.3"
   },
   "devDependencies": {

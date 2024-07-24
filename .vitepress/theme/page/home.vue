@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import CarkList from '../components/CarkList.vue'
-import Cark from '../components/Cark.vue'
+import Info from '../components/Info.vue'
 import { data as posts } from '../utils/posts.data'
 
 const currentPosts = computed(() => {
@@ -11,8 +11,10 @@ const currentPosts = computed(() => {
 
 <template>
   <div class="home mt-4 flex">
-    <CarkList class="cark-list w-3/5 mr-5" :data-list="currentPosts" />
-    <Cark class="cark w-2/5 h-20" />
+    <CarkList class="w-2/3 mr-5" :data-list="currentPosts" />
+    <div class="w-1/3">
+      <Info class="cark sticky top-5" />
+    </div>
   </div>
 </template>
 
@@ -21,10 +23,6 @@ const currentPosts = computed(() => {
   width: 90%;
   margin: 0 auto;
   background-color: transparent;
-}
-
-.cark-list {
-  width: 100%;
 }
 
 .home > .cark{

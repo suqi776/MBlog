@@ -48,11 +48,9 @@ function goToPage(page: number) {
               <h2 class="text-lg font-bold truncate w-full">
                 {{ item.title }}
               </h2>
-              <span class="inline-block truncate w-full leading-none my-3">
-                x app.Click the button to watch on Jetflix app.Click the button to watch on  Jetflix app.Click the button to watch on Jetflix app.Click the button to watch on Jetflix app. Jetflix app.Click the button to watch on Jetflix app.Click the button to watch on Jetflix app. Jetflix app.Click the button to watch on Jetflix app.Click the button to watch on Jetflix app. Jetflix app.Click the button to watch on Jetflix app.Click the button to watch on Jetflix app. Jetflix app.Click the button to watch on Jetflix app.Click the button to watch on Jetflix app. Jetflix app.Click the button to watch on Jetflix app.Click the button to watch on Jetflix app. Jetflix app.Click the button to watch on Jetflix app.Click the button to watch on Jetflix app.Jetflix app.Click the button to watch on Jetflix app.
-              </span>
-              <span>
-                ---  {{ item.date.string }}
+              <span class="inline-block truncate w-full leading-none my-3" />
+              <span class="flex items-center">
+                <span class="iconify carbon--update-now mr-6" />  {{ item.date.string }}
               </span>
             </a>
           </template>
