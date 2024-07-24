@@ -11,7 +11,7 @@ const currentPosts = computed(() => {
 
 <template>
   <div class="home mt-4 flex">
-    <CarkList class="w-2/3 mr-5" :data-list="currentPosts" />
+    <CarkList class="cark-list w-2/3 mr-5" :data-list="currentPosts" />
     <div class="cark w-1/3">
       <Info class="sticky top-5" />
     </div>
@@ -27,6 +27,10 @@ const currentPosts = computed(() => {
 
 .home > .cark{
   display: none;
+}
+
+.cark-list {
+  width: 100%;
 }
 
 @media (min-width: 1280px) {
