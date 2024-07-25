@@ -10,6 +10,14 @@ const currentPosts = computed(() => {
 </script>
 
 <template>
+  <div class="home mt-4 flex">
+    <CarkList class="cark-list w-2/3 mr-5" :data-list="currentPosts" />
+    <div class="cark w-1/3">
+      <div class="sticky top-5">
+        <Info />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
