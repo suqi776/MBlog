@@ -13,7 +13,9 @@ const currentPosts = computed(() => {
   <div class="home mt-4 flex">
     <CarkList class="w-2/3 mr-5" :data-list="currentPosts" />
     <div class="w-1/3">
-      <Info class="cark sticky top-5" />
+      <div class="sticky top-5">
+        <Info class="cark" />
+      </div>
     </div>
   </div>
 </template>
