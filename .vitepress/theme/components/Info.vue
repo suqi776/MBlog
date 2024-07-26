@@ -23,14 +23,22 @@ const blogNum = computed(() => {
         </a>
       </div>
       <div class="flex justify-between mx-8 my-6">
-        <div class="flex flex-col items-center w-1/2">
-          <span>文章数</span>
+        <div class="flex flex-col items-center w-1/3">
+          <span>文章</span>
           <span>{{ blogNum }}</span>
         </div>
-        <div class="flex flex-col items-center w-1/2">
+        <div class="flex flex-col items-center w-1/3">
+          <span>标签</span>
+          <span>{{ blogNum }}</span>
+        </div>
+        <div class="flex flex-col items-center w-1/3">
+          <span>分类</span>
+          <span>{{ blogNum }}</span>
+        </div>
+        <!-- <div class="flex flex-col items-center w-1/2">
           <span>访问数</span>
           <span id="busuanzi_value_site_pv" />
-        </div>
+        </div> -->
         <div />
       </div>
     </template>
