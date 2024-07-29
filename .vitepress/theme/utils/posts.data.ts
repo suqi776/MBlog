@@ -9,6 +9,7 @@ interface Post {
   }
   excerpt: string | undefined
   category: Array<string>
+  imgURL: string | undefined
 }
 
 declare const data: Post[]
@@ -24,6 +25,7 @@ export default createContentLoader('posts/*.md', {
         excerpt,
         date: formatDate(frontmatter.date),
         category: frontmatter.category ?? [],
+        imgURL: frontmatter.imgURL,
       }))
       .sort((a, b) => b.date.time - a.date.time)
   },

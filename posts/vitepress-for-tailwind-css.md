@@ -3,6 +3,7 @@ title: VitePress for Tailwind CSS
 date: 2024-07-11
 category:
   - Tailwind CSS
+imgURL: '/img_2.jpg'
 ---
 
 [[toc]]

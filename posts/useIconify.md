@@ -1,10 +1,10 @@
 ---
-outline: deep
 title: Iconify for Tailwind CSS
 date: 2024-07-11
 category:
   - Iconify
   - Tailwind CSS
+imgURL: '/img_1.jpg'
 ---
 
 [[toc]]

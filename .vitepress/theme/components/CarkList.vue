@@ -42,7 +42,43 @@ function goToPage(page: number) {
         :key="index"
         class="h-44 cursor-pointer mb-5"
       >
-        <Cark class="cark p-10 hover:bg-zinc-500/10">
+        <Cark
+          v-if="theme.blogImg"
+          class="cark hover:bg-zinc-500/10 flex image-container"
+          :class="{
+            'flex-row-reverse': index % 2 === 0,
+          }"
+        >
+          <template #default>
+            <div
+              class="h-44 w-1/2 image-container"
+              :class="{
+                'rounded-r-lg': index % 2 === 0,
+                'rounded-l-lg': index % 2 !== 0,
+              }"
+              :style="{
+                backgroundImage: `url(${item.imgURL || '/img_1.jpg'})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }"
+            />
+            <a :href="item.url" class="flex items-center justify-center w-1/2 pl-3">
+              <div class="w-full">
+                <h2 class="text-lg font-bold truncate w-full">
+                  {{ item.title }}
+                </h2>
+                <span class="inline-block truncate w-full leading-none my-3" />
+                <span class="flex items-center">
+                  <span class="iconify carbon--update-now mr-6" />
+                  <span>{{ item.date.string }}</span>
+                </span>
+              </div>
+            </a>
+          </template>
+        </Cark>
+
+        <Cark v-else class="cark p-10 hover:bg-zinc-500/10">
           <template #default>
             <a :href="item.url" class="flex flex-col w-full">
               <h2 class="text-lg font-bold truncate w-full">
@@ -50,7 +86,8 @@ function goToPage(page: number) {
               </h2>
               <span class="inline-block truncate w-full leading-none my-3" />
               <span class="flex items-center">
-                <span class="iconify carbon--update-now mr-6" />  {{ item.date.string }}
+                <span class="iconify carbon--update-now mr-6" />
+                <span>{{ item.date.string }}</span>
               </span>
             </a>
           </template>

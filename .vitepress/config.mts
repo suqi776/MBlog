@@ -4,6 +4,7 @@ import { defineConfigWithTheme } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export interface ThemeConfig extends DefaultTheme.Config {
   docCount?: number
+  blogImg?: boolean
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
@@ -26,6 +27,9 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     // 目录侧边栏
     aside: false,
+
+    // 是否显示图片
+    blogImg: true,
   },
   // ...
   markdown: {
