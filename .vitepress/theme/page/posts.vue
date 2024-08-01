@@ -22,7 +22,7 @@ const currentPosts = computed(() => {
 
 @media (min-width: 1280px) {
   .cark-posts {
-    width: 55%;
+    width: 60%;
   }
 }
 </style>

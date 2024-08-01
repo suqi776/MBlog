@@ -10,7 +10,7 @@ const currentPosts = computed(() => {
 </script>
 
 <template>
-  <div class="home mt-4 flex">
+  <div class="home mt-4 flex justify-evenly">
     <CarkList class="cark-list w-2/3 mr-5" :data-list="currentPosts" />
     <div class="cark w-1/3">
       <div class="sticky top-5">
@@ -35,9 +35,15 @@ const currentPosts = computed(() => {
   width: 100%;
 }
 
+@media (min-width: 1560px) {
+  .home {
+    width: 60%;
+  }
+}
+
 @media (min-width: 1280px) {
   .home {
-    width: 55%;
+    width: 60%;
   }
 }
 
