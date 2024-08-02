@@ -4,6 +4,7 @@ import ArtPlum from './components/ArtPlum.vue'
 import DocFooter from './components/VDoc/DocFooter.vue'
 import DocTop from './components/VDoc/DocTop.vue'
 import BackToTop from './components/VDoc/BackToTop.vue'
+import BgImages from './components/BgImages.vue'
 
 const { Layout } = DefaultTheme
 </script>
@@ -12,6 +13,7 @@ const { Layout } = DefaultTheme
   <div class="home">
     <ArtPlum />
     <BackToTop />
+    <BgImages />
     <Layout class="home-container">
       <template #doc-before>
         <DocTop />

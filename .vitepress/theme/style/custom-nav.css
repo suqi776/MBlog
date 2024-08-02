@@ -4,7 +4,15 @@
   }
 }
 
+.VPNav .title {
+  color: var(--su-c-text-1);
+}
+
 .VPNavBar > .divider,
 .VPNavBar .divider-line {
   background-color: transparent !important;
+}
+
+.VPNavBarMenuLink {
+  color: var(--su-c-text-1) !important;
 }

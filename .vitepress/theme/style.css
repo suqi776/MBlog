@@ -143,4 +143,11 @@
 
  :root{
   --vp-nav-bg-color: transparent !important;
+  --su-c-text-1: #ffffff;
+  --su-bg-color-alpha: rgba(0, 0, 0, .3);
+ }
+
+ :root.dark{
+  --su-c-text-1: #aeaeae;
+  --su-bg-color-alpha: rgba(0, 0, 0, .7);
  }
