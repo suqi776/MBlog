@@ -92,16 +92,16 @@ function isRightImagesShow(index: number) {
         <Cark class="cark w-full hover:bg-zinc-500/10">
           <template #default>
             <a :href="item.url" class="w-full flex justify-center">
-              <div v-if="isLeftImagesShow(index)" class="box-images-right w-3/10 overflow-hidden rounded-l">
+              <div v-if="isLeftImagesShow(index)" class="box-images-right hidden w-3/10 overflow-hidden rounded-l md:block">
                 <div
                   :style="blogListImagesSize(item)"
                   class="h-100px transition-transform duration-700 group-hover:scale-125"
                 />
               </div>
               <div class="min-h-100px w-7/10 flex flex-col items-center justify-center">
-                <div class="z-1 text-lg font-bold">
-                  <span v-if="item.top" class="top p-4 pt-0 text-lg" />
-                  <span class="w-full">{{ item.title }}</span>
+                <div class="z-1">
+                  <span v-if="item.top" class="top p-4 pt-0" />
+                  <span class="w-full font-600">{{ item.title }}</span>
                 </div>
                 <div class="z-1 mt-3 flex text-xs">
                   <div class="flex items-center">
@@ -123,7 +123,7 @@ function isRightImagesShow(index: number) {
                   </div>
                 </div>
               </div>
-              <div v-if="isRightImagesShow(index)" class="box-images w-3/10 overflow-hidden rounded-r">
+              <div v-if="isRightImagesShow(index)" class="box-images hidden w-3/10 overflow-hidden rounded-r md:block">
                 <div
                   :style="blogListImagesSize(item)"
                   class="transition-transform duration-700 group-hover:scale-125"
