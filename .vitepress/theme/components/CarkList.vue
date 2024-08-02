@@ -100,7 +100,6 @@ function isRightImagesShow(index: number) {
               </div>
               <div class="min-h-100px w-7/10 flex flex-col items-center justify-center">
                 <div class="z-1">
-                  <!-- <span v-if="item.top" class="top p-4 pt-0" /> -->
                   <div
                     v-if="item.top"
                     class="i-carbon:attachment bg-125 pos-absolute h-2em w-2em rotate-180 bg-medium-gray-0.7 -left-3 -top-2"
@@ -191,16 +190,5 @@ function isRightImagesShow(index: number) {
 }
 .box:hover .box-images {
   transition: 0.3s;
-}
-.top {
-  clip-path: polygon(50% 100% , 100% 5% , 0 5%);
-  border-radius: 50%;
-  transform: rotate(45deg);
-  width: 25px;
-  height: 30px;
-  background-color: rgba(125, 125, 125);
-  position: absolute;
-  top: -0.8rem;
-  right: -0.8rem;
 }
 </style>
