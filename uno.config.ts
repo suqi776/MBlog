@@ -8,7 +8,7 @@ import {
   presetWebFonts,
   transformerDirectives,
   transformerVariantGroup,
-} from "unocss";
+} from 'unocss'
 
 export default defineConfig({
   shortcuts: [
@@ -34,4 +34,7 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
-});
+  rules: [
+    [/^bg-medium-gray-([.\d]+)$/, ([_, a]) => ({ background: `rgba(125, 125, 125, ${a})` })],
+  ],
+})

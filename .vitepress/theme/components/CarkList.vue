@@ -100,7 +100,11 @@ function isRightImagesShow(index: number) {
               </div>
               <div class="min-h-100px w-7/10 flex flex-col items-center justify-center">
                 <div class="z-1">
-                  <span v-if="item.top" class="top p-4 pt-0" />
+                  <!-- <span v-if="item.top" class="top p-4 pt-0" /> -->
+                  <div
+                    v-if="item.top"
+                    class="i-carbon:attachment bg-125 pos-absolute h-2em w-2em rotate-180 bg-medium-gray-0.7 -left-3 -top-2"
+                  />
                   <span class="w-full font-600">{{ item.title }}</span>
                 </div>
                 <div class="z-1 mt-3 flex text-xs">

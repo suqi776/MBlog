@@ -18,7 +18,7 @@ watch(y, (newY) => {
 </script>
 
 <template>
-  <div v-if="isVisible" class="back-top iconify carbon--arrow-shift-down" @click="scrollToTop" />
+  <div v-if="isVisible" class="back-top i-carbon:arrow-shift-down h-1em w-1em" @click="scrollToTop" />
 </template>
 
 <style scoped>
