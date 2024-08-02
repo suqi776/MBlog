@@ -101,14 +101,14 @@ function isRightImagesShow(index: number) {
               <div class="min-h-100px w-7/10 flex flex-col items-center justify-center">
                 <div class="z-1 text-lg font-bold">
                   <span v-if="item.top" class="top p-4 pt-0 text-lg" />
-                  <span class="w-full truncate">{{ item.title }}</span>
+                  <span class="w-full">{{ item.title }}</span>
                 </div>
                 <div class="z-1 mt-3 flex text-xs">
                   <div class="flex items-center">
                     <div class="i-carbon-update-now mr-1 h-1em w-1em" />
                     <span class="w-full truncate">{{ item.date.string }}</span>
                   </div>
-                  <div v-if="item.category" class="flex flex-wrap">
+                  <div v-if="item.category" class="hidden flex-wrap md:flex">
                     <div
                       v-for="(category, categoryIndex) in item.category"
                       :key="categoryIndex"
