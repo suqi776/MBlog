@@ -19,7 +19,7 @@ watch(y, (newY) => {
 
 <template>
   <div class="bg-img hidden w-full flex-col lg:flex">
-    <img src="../public/bj2.jpg" class="lg:h-100vh">
+    <img src="https://s2.loli.net/2023/11/03/kVCHqEAfg5jyGZX.jpg" class="lg:h-100vh">
     <div class="down i-carbon:touch-1-down pos-absolute left-1/2 h-2em w-2em cursor-pointer" @click="scrollToTop" />
   </div>
 </template>
