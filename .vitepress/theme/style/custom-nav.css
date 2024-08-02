@@ -4,18 +4,6 @@
   }
 }
 
-@media (min-width: 1280px) {
-  .VPNav {
-    .VPNavBar{
-      .wrapper {
-        .container{
-          width: 65%;
-        }
-      }
-    }
-  }
-}
-
 .VPNavBar > .divider,
 .VPNavBar .divider-line {
   background-color: transparent !important;

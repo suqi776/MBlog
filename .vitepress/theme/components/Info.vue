@@ -12,7 +12,7 @@ const blogNum = computed(() => {
   <Cark>
     <template #default>
       <div class="info">
-        <img class="w-24 h-24 m-5 rounded-full mx-auto p-4 bg-zinc-500/10 spin" src="../public/logo.svg" alt="" width="433" height="577">
+        <img class="spin m-5 mx-auto h-24 w-24 rounded-full bg-zinc-500/10 p-4" src="../public/logo.svg" alt="" width="433" height="577">
       </div>
       <div class="flex justify-center">
         <a class="cursor-pointer">
@@ -22,16 +22,16 @@ const blogNum = computed(() => {
           <span class="iconify carbon--email ml-5" style="width: 1.4rem; height: 1.4rem;" />
         </a>
       </div>
-      <div class="flex justify-between mx-8 my-6">
-        <div class="flex flex-col items-center w-1/3">
+      <div class="mx-8 my-6 flex justify-between">
+        <div class="w-1/3 flex flex-col items-center">
           <span>文章</span>
           <span>{{ blogNum }}</span>
         </div>
-        <div class="flex flex-col items-center w-1/3">
+        <div class="w-1/3 flex flex-col items-center">
           <span>标签</span>
           <span>{{ blogNum }}</span>
         </div>
-        <div class="flex flex-col items-center w-1/3">
+        <div class="w-1/3 flex flex-col items-center">
           <span>分类</span>
           <span>{{ blogNum }}</span>
         </div>

@@ -1,10 +1,24 @@
 import type { DefaultTheme } from 'vitepress'
 import { defineConfigWithTheme } from 'vitepress'
+import UnoCSS from 'unocss/vite'
 
 // https://vitepress.dev/reference/site-config
 export interface ThemeConfig extends DefaultTheme.Config {
   docCount?: number
   blogImg?: boolean
+  /**
+   * @default isBlogImages:false
+   * @default imagesSize:medium
+   * @default imagesLocation:center
+   * @description Set blog image style
+   * @description imagesSize small : 小图｜medium : 中图｜large : 大图
+   * @description imagesLocation left : 左｜right : 右｜reversal : 左右交替 | leftRight : 左右
+   */
+  blogList?: {
+    isBlogImages?: boolean
+    imagesSize?: 'small' | 'medium' | 'large'
+    imagesLocation?: 'left' | 'right' | 'reversal' | 'leftRight'
+  }
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
@@ -30,6 +44,11 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     // 是否显示图片
     blogImg: true,
+
+    blogList: {
+      isBlogImages: true,
+      imagesLocation: 'leftRight',
+    },
   },
   // ...
   markdown: {
@@ -39,6 +58,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     optimizeDeps: {
       include: ['@vueuse/core'],
     },
+    plugins: [UnoCSS()],
   },
   // vercel 移除 .html
   cleanUrls: true,

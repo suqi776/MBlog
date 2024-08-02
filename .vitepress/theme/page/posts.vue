@@ -14,15 +14,9 @@ const currentPosts = computed(() => {
 
 <style scoped>
 .cark-posts {
-  width: 90%;
+  width: 80%;
   padding-top: 2%;
   margin: 0 auto;
   background-color: transparent;
-}
-
-@media (min-width: 1280px) {
-  .cark-posts {
-    width: 60%;
-  }
 }
 </style>

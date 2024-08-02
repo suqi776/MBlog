@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="cark border-solid border-zinc-500/50 border rounded-xl">
+  <div class="border border-zinc-500/50 rounded-xl border-solid">
     <slot />
   </div>
 </template>

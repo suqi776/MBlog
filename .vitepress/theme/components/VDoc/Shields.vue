@@ -15,7 +15,7 @@ function badgeUrl(category: string | number | boolean) {
 </script>
 
 <template>
-  <div class="flex flex-wrap bottom-2">
+  <div class="bottom-2 flex flex-wrap">
     <img v-for="(c, index) in category" :key="index" :alt="c" :src="badgeUrl(c)" class="m-1 ml-0 cursor-pointer" @click="getCategory(c)">
   </div>
 </template>

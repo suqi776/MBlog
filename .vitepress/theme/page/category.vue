@@ -34,12 +34,6 @@ function handleItemClick(c: any) {
 
 <style scoped>
 .category {
-  width: 90%;
-}
-
-@media (min-width: 1280px) {
-  .category {
-    width: 55%;
-  }
+  width: 80%;
 }
 </style>

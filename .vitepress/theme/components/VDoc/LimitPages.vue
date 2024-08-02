@@ -19,13 +19,13 @@ function changePage(page: number) {
   <div class="limit-pages">
     <ul class="flex justify-center">
       <li class="limit-pages-list" :class="[{ disabled: currentPage === 1 }]" @click="changePage(currentPage - 1)">
-        <span class="iconify carbon--triangle-left-solid text-center" />
+        <span class="i-carbon-triangle-left-solid text-center" />
       </li>
       <li v-for="(page, index) in totalPages" :key="index" :class="[{ active: currentPage === page }]" class="limit-pages-list" @click="changePage(page)">
         {{ page }}
       </li>
       <li class="limit-pages-list" :class="[{ disabled: currentPage === totalPages }]" @click="changePage(currentPage + 1)">
-        <span class="iconify carbon--triangle-left-solid text-center rotate-180" />
+        <span class="i-carbon-triangle-left-solid rotate-180 text-center" />
       </li>
     </ul>
   </div>

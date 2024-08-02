@@ -9,6 +9,8 @@ import home from './page/home.vue'
 import examples from './page/examples.vue'
 import category from './page/category.vue'
 import posts from './page/posts.vue'
+// uno.css
+import 'virtual:uno.css'
 
 export default {
   extends: DefaultTheme,

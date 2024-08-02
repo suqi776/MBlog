@@ -36,10 +36,10 @@ function goToPage(page: number) {
 <template>
   <div>
     <ul class="mt-5">
-      <li v-for="{ title, url, date } of filteredPosts" :key="url" class="p-2 my-2 border-solid">
+      <li v-for="{ title, url, date } of filteredPosts" :key="url" class="my-2 border-solid p-2">
         <div>
-          <a :href="url" class="w-full h-full flex flex-col">
-            <span class="inline-block w-full h-full truncate">{{ title }}</span>
+          <a :href="url" class="h-full w-full flex flex-col">
+            <span class="inline-block h-full w-full truncate">{{ title }}</span>
             <span class="date">- {{ date.string }}</span>
           </a>
         </div>

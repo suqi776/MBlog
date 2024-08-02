@@ -32,68 +32,109 @@ watch(filteredPosts, (newFilteredPosts) => {
 function goToPage(page: number) {
   currentPage.value = page
 }
+
+function randomImages() {
+  const imgNum = Math.floor(Math.random() * 5) + 1
+  return `url(./.vitepress/theme/public/img_${imgNum}.jpg)`
+}
+
+function blogListImagesSize(item: { imgURL: string }) {
+  let imagesSize: string = '150px'
+  if (theme.value.blogList?.isBlogImages) {
+    if (theme.value.blogList.imagesSize === 'small') {
+      imagesSize = '100px'
+    }
+    else if (theme.value.blogList.imagesSize === 'large') {
+      imagesSize = '200px'
+    }
+    return {
+      backgroundImage: item.imgURL ? `url(${item.imgURL})` : randomImages(),
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      height: imagesSize,
+    }
+  }
+  return {
+    height: imagesSize,
+  }
+}
+
+function isLeftImagesShow(index: number) {
+  if (((index % 2 === 0 && theme.value.blogList?.imagesLocation === 'reversal')
+    || theme.value.blogList?.imagesLocation === 'left'
+    || theme.value.blogList?.imagesLocation === 'leftRight'
+    || !theme.value.blogList?.imagesLocation)
+    && theme.value.blogList?.isBlogImages
+  ) {
+    return true
+  }
+}
+function isRightImagesShow(index: number) {
+  if (((index % 2 !== 0 && theme.value.blogList?.imagesLocation === 'reversal')
+    || theme.value.blogList?.imagesLocation === 'right'
+    || theme.value.blogList?.imagesLocation === 'leftRight')
+    && theme.value.blogList?.isBlogImages
+  ) {
+    return true
+  }
+}
 </script>
 
 <template>
   <div>
-    <ul class="w-full">
-      <li
+    <div>
+      <div
         v-for="(item, index) in filteredPosts"
         :key="index"
-        class="h-44 cursor-pointer mb-5"
+        class="box group mx-auto mb-5 box-border w-9/10 flex cursor-pointer items-center justify-center rounded"
       >
-        <Cark
-          v-if="theme.blogImg"
-          class="cark hover:bg-zinc-500/10 flex image-container"
-          :class="{
-            'flex-row-reverse': index % 2 === 0,
-          }"
-        >
+        <Cark class="cark w-full hover:bg-zinc-500/10">
           <template #default>
-            <div
-              class="h-44 w-1/2 image-container"
-              :class="{
-                'rounded-r-lg': index % 2 === 0,
-                'rounded-l-lg': index % 2 !== 0,
-              }"
-              :style="{
-                backgroundImage: `url(${item.imgURL || '/img_1.jpg'})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-              }"
-            />
-            <a :href="item.url" class="flex items-center justify-center w-1/2 pl-3">
-              <div class="w-full">
-                <h2 class="text-lg font-bold truncate w-full">
-                  {{ item.title }}
-                </h2>
-                <span class="inline-block truncate w-full leading-none my-3" />
-                <span class="flex items-center">
-                  <span class="iconify carbon--update-now mr-6" />
-                  <span>{{ item.date.string }}</span>
-                </span>
+            <a :href="item.url" class="w-full flex justify-center">
+              <div v-if="isLeftImagesShow(index)" class="box-images-right w-3/10 overflow-hidden rounded-l">
+                <div
+                  :style="blogListImagesSize(item)"
+                  class="h-100px transition-transform duration-700 group-hover:scale-125"
+                />
+              </div>
+              <div class="min-h-100px w-7/10 flex flex-col items-center justify-center">
+                <div class="z-1 text-lg font-bold">
+                  <span v-if="item.top" class="top p-4 pt-0 text-lg" />
+                  <span class="w-full truncate">{{ item.title }}</span>
+                </div>
+                <div class="z-1 mt-3 flex text-xs">
+                  <div class="flex items-center">
+                    <div class="i-carbon-update-now mr-1 h-1em w-1em" />
+                    <span class="w-full truncate">{{ item.date.string }}</span>
+                  </div>
+                  <div v-if="item.category" class="flex flex-wrap">
+                    <div
+                      v-for="(category, categoryIndex) in item.category"
+                      :key="categoryIndex"
+                      class="mx-0.5"
+                    >
+                      <Cark class="m-0.1 px-1">
+                        <template #default>
+                          {{ category }}
+                        </template>
+                      </Cark>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div v-if="isRightImagesShow(index)" class="box-images w-3/10 overflow-hidden rounded-r">
+                <div
+                  :style="blogListImagesSize(item)"
+                  class="transition-transform duration-700 group-hover:scale-125"
+                />
               </div>
             </a>
           </template>
         </Cark>
+      </div>
+    </div>
 
-        <Cark v-else class="cark p-10 hover:bg-zinc-500/10">
-          <template #default>
-            <a :href="item.url" class="flex flex-col w-full">
-              <h2 class="text-lg font-bold truncate w-full">
-                {{ item.title }}
-              </h2>
-              <span class="inline-block truncate w-full leading-none my-3" />
-              <span class="flex items-center">
-                <span class="iconify carbon--update-now mr-6" />
-                <span>{{ item.date.string }}</span>
-              </span>
-            </a>
-          </template>
-        </Cark>
-      </li>
-    </ul>
     <LimitPages v-if="dataList.length > docCount" :total-pages="totalPages" :current-page="currentPage" @update-page="goToPage" />
   </div>
 </template>
@@ -113,5 +154,49 @@ function goToPage(page: number) {
     box-shadow: 0px 0px 20px 0px rgb(113 113 122 / 0.5);
     transition: all 0.3s ease;
   }
+}
+
+.box {
+  position: relative;
+  box-shadow: var(--vp-shadow);
+  transition: all 0.3s;
+}
+.box:hover {
+  transition: 0.3s;
+  box-shadow: var(--vp-shadow-hover);
+}
+.gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(125, 125, 125, 1), rgba(125, 125, 125, 0.5));
+  border-radius: inherit;
+}
+.gradient:hover::before {
+  background: linear-gradient(to right, rgba(125, 125, 125, 1), rgba(125, 125, 125, 0.9));
+  transition: background 0.5s ease;
+}
+.box-images {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+}
+.box-images-right {
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%) !important;
+}
+.box:hover .box-images {
+  transition: 0.3s;
+}
+.top {
+  clip-path: polygon(50% 100% , 100% 5% , 0 5%);
+  border-radius: 50%;
+  transform: rotate(45deg);
+  width: 25px;
+  height: 30px;
+  background-color: rgba(125, 125, 125);
+  position: absolute;
+  top: -0.8rem;
+  right: -0.8rem;
 }
 </style>
