@@ -84,12 +84,13 @@ watch(y, (newY) => {
   position: absolute;
   left: 0;
   fill: var(--vp-c-bg);
-  bottom: calc( 40vh + var(--vp-nav-height) - constant(safe-area-inset-bottom) ); /* 兼容 iOS < 11.2 */
-  bottom: calc( 40vh + var(--vp-nav-height) - env(safe-area-inset-bottom) );
+  margin-bottom: var(--vp-nav-height);
+  bottom: 40vh;
 }
 
 @media (min-width: 1024px) {
   .banner {
+    margin-bottom: 0;
     bottom: 0;
   }
 }
