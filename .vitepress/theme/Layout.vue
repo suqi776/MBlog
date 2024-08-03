@@ -15,7 +15,7 @@ const { Layout } = DefaultTheme
   <div class="home">
     <ArtPlum />
     <BackToTop />
-    <BgImages v-if="frontmatter.layout" />
+    <BgImages v-if="frontmatter.layout == 'index'" />
     <Layout class="home-container">
       <template #doc-before>
         <DocTop />
