@@ -25,7 +25,7 @@ watch(y, (newY) => {
     <div class="flex flex-col">
       <div v-if="frontmatter.layout === 'index'" class="bg-img w-full flex flex-col">
         <div class="h-50vh flex items-center justify-center lg:h-100vh" style="background: url('https://s2.loli.net/2023/11/03/kVCHqEAfg5jyGZX.jpg') center center / cover no-repeat;">
-          <div class="z-1 text-lg font-800 md:text-10">
+          <div class="z-1 text-lg text-[var(--su-c-text-1)] font-800 md:text-10">
             <span>My Blog</span>
           </div>
           <div class="down i-carbon:touch-1-down pos-absolute hidden h-2em w-2em cursor-pointer lg:block" @click="scrollToTop" />
