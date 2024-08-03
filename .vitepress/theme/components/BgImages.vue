@@ -85,7 +85,7 @@ watch(y, (newY) => {
   left: 0;
   fill: var(--vp-c-bg);
   margin-bottom: var(--vp-nav-height);
-  bottom: 40%;
+  bottom: 38%;
 }
 
 @media (min-width: 1024px) {
