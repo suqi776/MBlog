@@ -30,7 +30,7 @@ watch(y, (newY) => {
           </div>
           <div class="down i-carbon:touch-1-down pos-absolute z-10 hidden h-2em w-2em cursor-pointer lg:block" @click="scrollToTop" />
         </div>
-        <svg class="banner hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <svg class="banner hidden lg:block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
           <defs>
             <path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z" />
           </defs>
