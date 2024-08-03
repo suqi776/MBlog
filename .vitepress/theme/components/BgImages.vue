@@ -21,12 +21,20 @@ watch(y, (newY) => {
 </script>
 
 <template>
-  <div v-if="frontmatter.layout === 'index'" class="bg-img hidden w-full flex-col lg:flex">
-    <img src="https://s2.loli.net/2023/11/03/kVCHqEAfg5jyGZX.jpg" class="lg:h-100vh">
-    <div class="down i-carbon:touch-1-down pos-absolute left-1/2 h-2em w-2em cursor-pointer" @click="scrollToTop" />
-  </div>
-  <div v-else-if="frontmatter.layout" class="not-home-page hidden h-180px w-full items-center justify-center pt-[var(--vp-nav-height)] text-lg text-[var(--su-c-text-1)] font-800 backdrop-blur md:h-300px lg:flex md:text-10">
-    <span>{{ page.title }}</span>
+  <div>
+    <div class="flex flex-col">
+      <div v-if="frontmatter.layout === 'index'" class="bg-img w-full flex flex-col">
+        <div class="h-50vh flex items-center justify-center lg:h-100vh" style="background: url('https://s2.loli.net/2023/11/03/kVCHqEAfg5jyGZX.jpg') center center / cover no-repeat;">
+          <div class="z-1 text-lg font-800 md:text-10">
+            <span>My Blog</span>
+          </div>
+          <div class="down i-carbon:touch-1-down pos-absolute hidden h-2em w-2em cursor-pointer lg:block" @click="scrollToTop" />
+        </div>
+      </div>
+    </div>
+    <div v-if="frontmatter.layout && frontmatter.layout !== 'index'" class="not-home-page hidden h-180px w-full items-center justify-center pt-[var(--vp-nav-height)] text-lg text-[var(--su-c-text-1)] font-800 backdrop-blur md:h-300px lg:flex md:text-10">
+      <span>{{ page.title }}</span>
+    </div>
   </div>
 </template>
 
@@ -34,10 +42,17 @@ watch(y, (newY) => {
 .bg-img::before {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 50vh;
   background-color: var(--su-bg-color-alpha);
   content: '';
 }
+
+@media (min-width: 1024px) {
+  .bg-img::before {
+    height: 100%;
+  }
+}
+
 .down {
   color: var(--su-c-text-1);
   animation: moveUpAndDown 0.5s infinite alternate linear;
