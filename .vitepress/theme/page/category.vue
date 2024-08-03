@@ -26,14 +26,11 @@ function handleItemClick(c: any) {
 </script>
 
 <template>
-  <div class="category m-auto">
+  <div class="m-auto w-8/10">
     <Shields :category="uniqueCategory" @get-category="handleItemClick" />
     <CarkPosts :current-posts="currentPosts" :count="10" />
   </div>
 </template>
 
 <style scoped>
-.category {
-  width: 80%;
-}
 </style>

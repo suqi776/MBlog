@@ -7,7 +7,6 @@ import DocTop from './components/VDoc/DocTop.vue'
 import BackToTop from './components/VDoc/BackToTop.vue'
 import BgImages from './components/BgImages.vue'
 
-const { frontmatter } = useData()
 const { Layout } = DefaultTheme
 </script>
 
@@ -15,8 +14,8 @@ const { Layout } = DefaultTheme
   <div class="home">
     <ArtPlum />
     <BackToTop />
-    <BgImages v-if="frontmatter.layout == 'index'" />
-    <Layout class="home-container">
+    <BgImages />
+    <Layout class="max-w-1200px min-[1200px]:mx-auto min-[2000px]:max-w-1500px">
       <template #doc-before>
         <DocTop />
       </template>

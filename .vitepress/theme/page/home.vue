@@ -10,9 +10,9 @@ const currentPosts = computed(() => {
 </script>
 
 <template>
-  <div class="mx-auto my-0 mt-4 w-9.5/10 flex justify-evenly to-transparent xl:w-8/10">
+  <div class="mx-40px my-0 mt-4 flex justify-evenly to-transparent">
     <CarkList class="w-full xl:w-4/5" :data-list="currentPosts" />
-    <div class="hidden w-1/5 xl:block">
+    <div class="ml-5 hidden w-1/5 xl:block">
       <div class="sticky top-5">
         <Info />
       </div>

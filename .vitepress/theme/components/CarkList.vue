@@ -38,7 +38,7 @@ function randomImages() {
   return `url(./.vitepress/theme/public/img_${imgNum}.jpg)`
 }
 
-function blogListImagesSize(item: { imgURL: string }) {
+function blogListImagesSize(item: { imgURL: any }) {
   let imagesSize: string = '150px'
   if (theme.value.blogList?.isBlogImages) {
     if (theme.value.blogList.imagesSize === 'small') {
@@ -87,7 +87,7 @@ function isRightImagesShow(index: number) {
       <div
         v-for="(item, index) in filteredPosts"
         :key="index"
-        class="box group mx-auto mb-5 box-border w-9/10 flex cursor-pointer items-center justify-center rounded"
+        class="box group mx-auto mb-5 box-border flex cursor-pointer items-center justify-center rounded"
       >
         <Cark class="cark w-full hover:bg-zinc-500/10">
           <template #default>

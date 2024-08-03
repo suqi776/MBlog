@@ -16,3 +16,7 @@
 .VPNavBarMenuLink {
   color: var(--su-c-text-1) !important;
 }
+
+.VPNavBar > .wrapper > .container {
+  max-width: 100%;
+}

@@ -9,14 +9,8 @@ const currentPosts = computed(() => {
 </script>
 
 <template>
-  <CarkPosts :current-posts="currentPosts" class="cark-posts" :count="10" />
+  <CarkPosts :current-posts="currentPosts" class="mx-auto w-8/10" :count="10" />
 </template>
 
 <style scoped>
-.cark-posts {
-  width: 80%;
-  padding-top: 2%;
-  margin: 0 auto;
-  background-color: transparent;
-}
 </style>

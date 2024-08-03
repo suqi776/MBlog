@@ -22,6 +22,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
+  lang: 'zh',
   title: 'My Blog',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -48,6 +49,29 @@ export default defineConfigWithTheme<ThemeConfig>({
     blogList: {
       isBlogImages: true,
       imagesLocation: 'leftRight',
+    },
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          zh: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索文档',
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                },
+              },
+            },
+          },
+        },
+      },
     },
   },
   // ...
