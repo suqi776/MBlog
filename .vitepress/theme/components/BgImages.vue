@@ -33,23 +33,23 @@ onMounted(() => {
   <div>
     <div class="flex flex-col">
       <div v-if="frontmatter.layout === 'index'" class="bg-img-box w-full flex flex-col">
-        <div class="bg-img flex items-center justify-center" style="background: url('https://s2.loli.net/2023/11/03/kVCHqEAfg5jyGZX.jpg') center center / cover no-repeat;">
+        <div class="bg-img pos-relative flex items-center justify-center" style="background: url('https://s2.loli.net/2023/11/03/kVCHqEAfg5jyGZX.jpg') center center / cover no-repeat;">
           <div class="z-1 text-lg text-[var(--su-c-text-1)] font-800 md:text-10">
             <span>My Blog</span>
           </div>
           <div class="down i-carbon:touch-1-down pos-absolute z-10 hidden h-2em w-2em cursor-pointer lg:block" @click="scrollToTop" />
+          <svg class="banner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" />
+              <use xlink:href="#gentle-wave" x="48" y="3" />
+              <use xlink:href="#gentle-wave" x="48" y="5" />
+              <use xlink:href="#gentle-wave" x="48" y="7" />
+            </g>
+          </svg>
         </div>
-        <svg class="banner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-          <defs>
-            <path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z" />
-          </defs>
-          <g class="parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" />
-            <use xlink:href="#gentle-wave" x="48" y="3" />
-            <use xlink:href="#gentle-wave" x="48" y="5" />
-            <use xlink:href="#gentle-wave" x="48" y="7" />
-          </g>
-        </svg>
       </div>
     </div>
     <div v-if="frontmatter.layout && frontmatter.layout !== 'index'" class="not-home-page hidden h-180px w-full items-center justify-center pt-[var(--vp-nav-height)] text-lg text-[var(--su-c-text-1)] font-800 backdrop-blur md:h-300px lg:flex md:text-10">
@@ -60,6 +60,7 @@ onMounted(() => {
 
 <style scoped>
 .bg-img-box::before {
+  z-index: 1;
   position: absolute;
   width: 100%;
   height: calc(var(--vh, 1vh) * 40);
@@ -101,15 +102,8 @@ onMounted(() => {
   position: absolute;
   left: 0;
   fill: var(--vp-c-bg);
-  margin-bottom: var(--vp-nav-height);
-  bottom: calc(var(--vh, 1vh) * 40);
-}
-
-@media (min-width: 1024px) {
-  .banner {
-    margin-bottom: 0;
-    bottom: 0;
-  }
+  bottom: 0;
+  z-index: 2;
 }
 
 .banner .parallax>use {
