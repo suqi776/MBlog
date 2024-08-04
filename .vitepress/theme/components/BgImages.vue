@@ -18,15 +18,6 @@ function scrollToTop() {
 watch(y, (newY) => {
   isVisible.value = newY > 200
 })
-
-onMounted(() => {
-  function setVh() {
-    const vh = window.innerHeight * 0.01
-    document.documentElement.style.setProperty('--vh', `${vh}px`)
-  }
-  window.addEventListener('resize', setVh)
-  setVh()
-})
 </script>
 
 <template>
@@ -63,22 +54,22 @@ onMounted(() => {
   z-index: 1;
   position: absolute;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 40);
+  height: 40vh;
   background-color: var(--su-bg-color-alpha);
   content: '';
 }
 
 .bg-img {
-  height: calc(var(--vh, 1vh) * 40);
+  height: 40vh;
 }
 
 @media (min-width: 1024px) {
   .bg-img-box::before {
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100vh;
   }
 
   .bg-img {
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100vh;
   }
 }
 
