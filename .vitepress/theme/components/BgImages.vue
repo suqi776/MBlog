@@ -32,8 +32,8 @@ onMounted(() => {
 <template>
   <div>
     <div class="flex flex-col">
-      <div v-if="frontmatter.layout === 'index'" class="bg-img w-full flex flex-col">
-        <div class="h-40vh flex items-center justify-center lg:h-100vh" style="background: url('https://s2.loli.net/2023/11/03/kVCHqEAfg5jyGZX.jpg') center center / cover no-repeat;">
+      <div v-if="frontmatter.layout === 'index'" class="bg-img-box w-full flex flex-col">
+        <div class="bg-img flex items-center justify-center" style="background: url('https://s2.loli.net/2023/11/03/kVCHqEAfg5jyGZX.jpg') center center / cover no-repeat;">
           <div class="z-1 text-lg text-[var(--su-c-text-1)] font-800 md:text-10">
             <span>My Blog</span>
           </div>
@@ -59,7 +59,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.bg-img::before {
+.bg-img-box::before {
   position: absolute;
   width: 100%;
   height: calc(var(--vh, 1vh) * 40);
@@ -67,8 +67,16 @@ onMounted(() => {
   content: '';
 }
 
+.bg-img {
+  height: calc(var(--vh, 1vh) * 40);
+}
+
 @media (min-width: 1024px) {
-  .bg-img::before {
+  .bg-img-box::before {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  .bg-img {
     height: calc(var(--vh, 1vh) * 100);
   }
 }
