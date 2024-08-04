@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { useScroll } from '@vueuse/core'
 import { useData } from 'vitepress'
-import { ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 const { frontmatter, page } = useData()
 
@@ -18,6 +18,15 @@ function scrollToTop() {
 watch(y, (newY) => {
   isVisible.value = newY > 200
 })
+
+onMounted(() => {
+  function setVh() {
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }
+  window.addEventListener('resize', setVh)
+  setVh()
+})
 </script>
 
 <template>
@@ -30,7 +39,7 @@ watch(y, (newY) => {
           </div>
           <div class="down i-carbon:touch-1-down pos-absolute z-10 hidden h-2em w-2em cursor-pointer lg:block" @click="scrollToTop" />
         </div>
-        <svg class="banner hidden lg:block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <svg class="banner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
           <defs>
             <path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z" />
           </defs>
@@ -53,14 +62,14 @@ watch(y, (newY) => {
 .bg-img::before {
   position: absolute;
   width: 100%;
-  height: 40vh;
+  height: calc(var(--vh, 1vh) * 40);
   background-color: var(--su-bg-color-alpha);
   content: '';
 }
 
 @media (min-width: 1024px) {
   .bg-img::before {
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 
@@ -85,7 +94,7 @@ watch(y, (newY) => {
   left: 0;
   fill: var(--vp-c-bg);
   margin-bottom: var(--vp-nav-height);
-  bottom: 40vh;
+  bottom: calc(var(--vh, 1vh) * 40);
 }
 
 @media (min-width: 1024px) {
