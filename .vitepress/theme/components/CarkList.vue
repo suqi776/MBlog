@@ -102,7 +102,7 @@ function isRightImagesShow(index: number) {
                 <div class="z-1">
                   <div
                     v-if="item.top"
-                    class="i-carbon:attachment bg-125 pos-absolute h-2em w-2em rotate-180 bg-medium-gray-0.7 -left-3 -top-2"
+                    class="i-carbon:attachment pos-absolute h-2em w-2em rotate-180 bg-medium-gray-0.7 -left-3 -top-2"
                   />
                   <span class="w-full font-600">{{ item.title }}</span>
                 </div>

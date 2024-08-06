@@ -1,7 +1,8 @@
 <script setup lang='ts'>
 import { useScroll } from '@vueuse/core'
 import { useData } from 'vitepress'
-import { onMounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
+import TextAnime from './TextAnime.vue'
 
 const { frontmatter, page } = useData()
 
@@ -26,7 +27,7 @@ watch(y, (newY) => {
       <div v-if="frontmatter.layout === 'index'" class="bg-img-box w-full flex flex-col">
         <div class="bg-img pos-relative flex items-center justify-center" style="background: url('https://s2.loli.net/2023/11/03/kVCHqEAfg5jyGZX.jpg') center center / cover no-repeat;">
           <div class="z-1 text-lg text-[var(--su-c-text-1)] font-800 md:text-10">
-            <span>My Blog</span>
+            <TextAnime />
           </div>
           <div class="down i-carbon:touch-1-down pos-absolute z-10 hidden h-2em w-2em cursor-pointer lg:block" @click="scrollToTop" />
           <svg class="banner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
